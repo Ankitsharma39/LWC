@@ -1,0 +1,31 @@
+<template>
+    <c-p2c-alert-component
+        message = "i am sending data from parent component" 
+        card-heading="Parent is only sending data"
+        number = "20"
+        is-valid = "false">
+        </c-p2c-alert-component>
+        <div class="slds-var-m-around_medium"></div>
+    <c-p2c-carousel-component carousel-details ={carouselData} ></c-p2c-carousel-component>
+    <!-- Ex of data passing on action at parent -->   
+    <lightning-card title="Parent to child communication on action">
+        <div class= "slds-var-m-around_medium">
+            <lightning-input type="number" label="Enter Percentage"
+            onkeyup={changeHandler}
+            value={percentage}
+            ></lightning-input>
+            <c-p2c-progress-component
+            progress-value={percentage}></c-p2c-progress-component>
+            <!--Example of method call-->
+            <lightning-card title="Calling Child method from parent">
+                <div class= "slds-var-m-around_medium">
+            <lightning-button variant="brand" label="Reset Slider" 
+            title="Primary action" 
+            onclick={handleClick}
+            class="slds-m-left_x-small"></lightning-button>
+            <c-p2c-slider-component></c-p2c-slider-component>
+        </div>
+    </lightning-card>
+</div>
+</lightning-card>
+</template>

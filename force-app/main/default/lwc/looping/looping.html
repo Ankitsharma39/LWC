@@ -1,0 +1,32 @@
+<template>
+   <lightning-card title="For:Each Loop with CEO List">
+       <div class= "slds-var-m-around_medium">
+           <template for:each = {ceolist} for:item="ceo">
+               <ul key={ceo.id} class="slds-has-dividers_around-space">
+                   <li class="slds-item">{ceo.id}-> {ceo.company} {ceo.ceo}</li>
+                </ul>
+           </template>
+       </div>
+   </lightning-card> 
+   <lightning-card title="Iterator Loop">
+    <div class= "slds-var-m-around_medium">
+        <template iterator:ceo={ceolist}>
+            <ul key={ceo.value.id} class="slds-has-dividers_around-space">
+                <template if:true={ceo.first}>
+                    <strong>
+                        List of companies and their CEO
+                    </strong>
+                </template>
+                <li class="slds-item"><strong>{ceo.value.company} :</strong>
+                    {ceo.value.ceo}
+                </li>
+                <template if:true={ceo.last}>
+                    <strong>
+                        Thanks for reading my list
+                    </strong>
+                </template>
+             </ul>
+        </template>
+    </div>
+</lightning-card> 
+</template>

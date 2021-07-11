@@ -1,0 +1,33 @@
+<template>
+    <lightning-card  title="Two way Data binding"></div>  
+        <div class="slds-var-m-around_medium lgc-bg">
+            <lightning-input type="text" 
+            label="Enter text"
+            onkeyup={changeHandler}></lightning-input>
+        </div>
+        <div>
+        <p>My Fullname is {name} and complete name is {fullname}</p>
+    </div>
+    </lightning-card>   
+    <lightning-card  title="Track Properties"></div>  
+        <div class="slds-var-m-around_medium lgc-bg">
+            <lightning-input type="text" 
+            label="Enter City Name"
+            onkeyup={trackHandler}></lightning-input>
+        </div>
+        <div>
+        <p>My country name is {address.country} and city is {address.city}</p>
+    </div>
+    </lightning-card>   
+    <lightning-card  title="Hello Rendering"></div>  
+        <div class="slds-var-m-around_medium lgc-bg">
+            <lightning-input type="text" 
+            label="Enter  Name"
+            onkeyup={changeHandler}></lightning-input>
+        </div>
+            <template if:true={helloMethod}>
+                <div>Hurray! you typed correctly          
+                </div>
+            </template>        
+    </lightning-card>   
+</template>
